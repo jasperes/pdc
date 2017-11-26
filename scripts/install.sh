@@ -23,3 +23,17 @@ install_spf13() {
     sh <(curl https://j.mp/spf13-vim3 -L)
     log_info "spf13-vim3 installed!"
 }
+
+install_sublime() {
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+    sudo apt-get install apt-transport-https
+    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+    sudo apt-get update
+    sudo apt-get install sublime-text
+}
+
+install_soapui() {
+    cd "$pdcyml_tmp"
+    curl -O "https://b537910400b7ceac4df0-22e92613740a7dd1247910134033c0d1.ssl.cf5.rackcdn.com/soapui/5.3.0/SoapUI-x64-5.3.0.sh" &&
+    bash "./SoapUI-x64-5.3.0.sh"
+}
