@@ -20,19 +20,22 @@ dependencies:
   - mpd
   - ncmpcpp
   - ranger
-  - firefox
-  - termite
   - terminator
   - guake
-  - gparted
   - dmenu
+  - gparted
   - wine
   - vlc
   - transmission
-  - chromium
+  - firefox
+
+import:
+  - ${pdcyml_settings_path_install}/scripts/install.sh
 
 execute:
-  - shell sudo aptitude update
-  - shell sudo aptitude upgrade
-  - bash scripts/imports.sh
+  - shell sudo apt-get update
+  - shell sudo apt-get upgrade
   - shell install_dependencies
+  - shell install_tldr
+  - shell install_oh_my_zsh
+  - shell install_spf13
