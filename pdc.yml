@@ -1,20 +1,38 @@
 settings:
   system:
-    distro: "archlinux"
-    arch: "x86_64"
-    wm: "i3"
-  dependencies:
-    - git
-    - wget
-    - zsh
-    - vim
-    - htop
-    - tree
-    - python
-    - python-pip
-    - conky
-    - mpd
-    - ncmpcpp
-    - ranger
-    - firefox
-    - termite
+    distro: debian
+    version: 9
+    arch: x86_64
+    wm: gnome-shell
+
+dependencies:
+  - git
+  - wget
+  - zsh
+  - vim
+  - htop
+  - tree
+  - python
+  - python-pip
+  - python3
+  - python3-pip
+  - conky
+  - mpd
+  - ncmpcpp
+  - ranger
+  - firefox
+  - termite
+  - terminator
+  - guake
+  - gparted
+  - dmenu
+  - wine
+  - vlc
+  - transmission
+  - chromium
+
+execute:
+  - shell sudo aptitude update
+  - shell sudo aptitude upgrade
+  - bash scripts/imports.sh
+  - shell install_dependencies
